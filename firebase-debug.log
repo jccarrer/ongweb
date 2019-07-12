@@ -1,0 +1,114 @@
+[debug] [2019-07-04T22:48:31.031Z] ----------------------------------------------------------------------
+[debug] [2019-07-04T22:48:31.035Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jorgitop\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-07-04T22:48:31.035Z] CLI Version:   7.0.2
+[debug] [2019-07-04T22:48:31.035Z] Platform:      win32
+[debug] [2019-07-04T22:48:31.035Z] Node Version:  v10.14.1
+[debug] [2019-07-04T22:48:31.037Z] Time:          Thu Jul 04 2019 17:48:31 GMT-0500 (GMT-05:00)
+[debug] [2019-07-04T22:48:31.037Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-04T22:48:31.054Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-04T22:48:31.055Z] > authorizing via signed-in user
+[debug] [2019-07-04T22:48:31.056Z] [iam] checking project ongwebecuador for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-07-04T22:48:31.062Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ongwebecuador:testIamPermissions  
+
+[debug] [2019-07-04T22:48:31.946Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-04T22:48:31.959Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ongwebecuador  
+ 
+[debug] [2019-07-04T22:48:32.630Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'ongwebecuador'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-07-04T22:48:32.650Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ongwebecuador/versions  
+
+[debug] [2019-07-04T22:48:34.946Z] <<< HTTP RESPONSE 200
+[info] i  hosting[ongwebecuador]: beginning deploy...
+[info] i  hosting[ongwebecuador]: found 2 files in public
+[debug] [2019-07-04T22:48:34.980Z] [hosting] hash cache [cHVibGlj] not populated
+[debug] [2019-07-04T22:48:35.018Z] [hosting] hash cache [cHVibGlj] stored for 2 files
+[debug] [2019-07-04T22:48:35.019Z] [hosting][hash queue][FINAL]
+[debug] [2019-07-04T22:48:35.019Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ongwebecuador/versions/8f8b97a876624ae8:populateFiles  
+ <request body omitted>
+[debug] [2019-07-04T22:48:35.195Z] Error: write EIO
+    at afterWriteDispatched (internal/stream_base_commons.js:78:25)
+    at writeGeneric (internal/stream_base_commons.js:73:3)
+    at WriteStream.Socket._writeGeneric (net.js:713:5)
+    at WriteStream.Socket._write (net.js:725:8)
+    at doWrite (_stream_writable.js:410:12)
+    at writeOrBuffer (_stream_writable.js:394:5)
+    at WriteStream.Writable.write (_stream_writable.js:294:11)
+    at _updateSpinner (C:\Users\jorgitop\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:20:28)
+    at Timeout._onTimeout (C:\Users\jorgitop\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:38:13)
+    at ontimeout (timers.js:436:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-07-04T22:56:01.986Z] ----------------------------------------------------------------------
+[debug] [2019-07-04T22:56:01.989Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jorgitop\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-07-04T22:56:01.989Z] CLI Version:   7.0.2
+[debug] [2019-07-04T22:56:01.989Z] Platform:      win32
+[debug] [2019-07-04T22:56:01.989Z] Node Version:  v10.14.1
+[debug] [2019-07-04T22:56:01.991Z] Time:          Thu Jul 04 2019 17:56:01 GMT-0500 (GMT-05:00)
+[debug] [2019-07-04T22:56:01.991Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-04T22:56:02.001Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-04T22:56:02.001Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\xampp\htdocs\symfony\ongweb
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing in an existing Firebase project directory
+
+[debug] [2019-07-04T22:56:10.446Z] ----------------------------------------------------------------------
+[debug] [2019-07-04T22:56:10.448Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jorgitop\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-07-04T22:56:10.449Z] CLI Version:   7.0.2
+[debug] [2019-07-04T22:56:10.449Z] Platform:      win32
+[debug] [2019-07-04T22:56:10.449Z] Node Version:  v10.14.1
+[debug] [2019-07-04T22:56:10.450Z] Time:          Thu Jul 04 2019 17:56:10 GMT-0500 (GMT-05:00)
+[debug] [2019-07-04T22:56:10.450Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-04T22:56:10.462Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-04T22:56:10.462Z] > authorizing via signed-in user
+[debug] [2019-07-04T22:56:10.462Z] [iam] checking project ongwebecuador for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-07-04T22:56:10.464Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ongwebecuador:testIamPermissions  
+
+[debug] [2019-07-04T22:56:11.309Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-04T22:56:11.318Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ongwebecuador  
+ 
+[debug] [2019-07-04T22:56:12.095Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'ongwebecuador'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-07-04T22:56:12.113Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ongwebecuador/versions  
+
+[debug] [2019-07-04T22:56:13.496Z] <<< HTTP RESPONSE 200
+[info] i  hosting[ongwebecuador]: beginning deploy...
+[info] i  hosting[ongwebecuador]: found 2 files in public
+[debug] [2019-07-04T22:56:13.530Z] [hosting] hash cache [cHVibGlj] load error: lines is not defined
+[debug] [2019-07-04T22:56:13.563Z] [hosting] hash cache [cHVibGlj] stored for 2 files
+[debug] [2019-07-04T22:56:13.563Z] [hosting][hash queue][FINAL]
+[debug] [2019-07-04T22:56:13.564Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ongwebecuador/versions/bd2eb1773222653d:populateFiles  
+ <request body omitted>
+[debug] [2019-07-04T22:56:13.741Z] Error: write EIO
+    at afterWriteDispatched (internal/stream_base_commons.js:78:25)
+    at writeGeneric (internal/stream_base_commons.js:73:3)
+    at WriteStream.Socket._writeGeneric (net.js:713:5)
+    at WriteStream.Socket._write (net.js:725:8)
+    at doWrite (_stream_writable.js:410:12)
+    at writeOrBuffer (_stream_writable.js:394:5)
+    at WriteStream.Writable.write (_stream_writable.js:294:11)
+    at _updateSpinner (C:\Users\jorgitop\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:20:28)
+    at Timeout._onTimeout (C:\Users\jorgitop\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:38:13)
+    at ontimeout (timers.js:436:11)
+[error] 
+[error] Error: An unexpected error has occurred.
