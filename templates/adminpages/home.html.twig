@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{# Comment #}
+<h1>{{title}}</h1>
+
+<div>
+    <p>
+    So you might be wondering... where do these recipes live? Great question! They live... in the cloud. I mean, they live on GitHub. On symfony.sh, click "Recipe" next to the Security checker. Ah, it takes us to the symfony/recipes repository. Here, you can see what files will be added and a few other changes described in manifest.json.
+    </p>
+
+    <p>
+    So you might be wondering... where do these recipes live? Great question! They live... in the cloud. I mean, they live on GitHub. On symfony.sh, click "Recipe" next to the Security checker. Ah, it takes us to the symfony/recipes repository. Here, you can see what files will be added and a few other changes described in manifest.json.
+    </p>
+    
+    <p>
+    So you might be wondering... where do these recipes live? Great question! They live... in the cloud. I mean, they live on GitHub. On symfony.sh, click "Recipe" next to the Security checker. Ah, it takes us to the symfony/recipes repository. Here, you can see what files will be added and a few other changes described in manifest.json.
+    </p>    
+
+</div>
+
+<h2>Comments ({{ comments|length}})</h2>
+
+<ul>
+    {% for comment in comments %}
+        <li> {{ comment }} </li>
+    {% endfor %}
+
+</ul>
+
+
+{% endblock %}
+
