@@ -5,3 +5,7 @@ index:
 admin:
     path: /admin
     controller: App\Controller\IndexController::adminpage
+    
+login:
+    path: /login
+    controller: App\Controller\IndexController::loginpage

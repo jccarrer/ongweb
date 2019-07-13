@@ -19,7 +19,13 @@ class IndexController extends AbstractController
         return new Response('<html><body>Hi, i am the home page </body></html>');
     }
  
-   
+    public function loginpage()
+    {
+        /**
+         * @Route("/login")
+         */
+               return $this->render('adminpages/login.html.twig');
+    }  
     
     public function adminpage()
     {
@@ -33,7 +39,7 @@ class IndexController extends AbstractController
 
         
         
-        return $this->render('adminpages/home.html.twig',[
+        return $this->render('adminpages/base.html.twig',[
             'title' => ucwords('notitle'),
             'comments' => $comments,
         ]);
