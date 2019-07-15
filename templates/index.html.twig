@@ -1,0 +1,21 @@
+{% extends 'enlaces.html.twig' %}
+
+{% block title %}index{% endblock %}
+
+{% block body %}
+    <h1>index</h1>
+
+     {% if is_granted('ROLE_USER') %}
+         You are a logged user
+         <a href=" {{ path('logout') }}">logout</a>
+         <br />
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href=" #"> Manage users </a>
+        {% endif%}
+
+     {% else %}
+         You are not logged
+         <a href=" {{ path('login') }}">login</a>
+     {% endif %}
+
+{% endblock %}

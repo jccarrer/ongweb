@@ -1,11 +1,18 @@
-index:
-    path: /
-    controller: App\Controller\IndexController::homepage
-
-admin:
-    path: /admin
-    controller: App\Controller\IndexController::adminpage
+#index:
+#    path: /
+#    controller: App\Controller\IndexController::homepage
+#
+#admin:
+#    path: /admin
+#    controller: App\Controller\IndexController::adminpage
+#    
+#login:
+#    path: /login
+#    controller: App\Controller\IndexController::loginpage
+#
+#login:
+#    path: /login
+#    controller: App\Controller\SecurityController::login
     
-login:
-    path: /login
-    controller: App\Controller\IndexController::loginpage
+logout:
+    path: /logout

@@ -2,44 +2,48 @@
 // src/Controller/IndexController.php
 namespace App\Controller;
 
-use Symfony\Bunle\FrameworkExtraBundle\Configuration\Route;
+
+
+use Symfony\Component\Routing\Annotation\Route;
+#use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+//use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 
 
 class IndexController extends AbstractController
 {
-
-    public function homepage()
+    /**
+     * @Route("/", name="index")
+     */
+    public function index()
     {
-        /**
-         * @Route("/")
-         */
-        return new Response('<html><body>Hi, i am the home page </body></html>');
+        return $this->render('index.html.twig');
     }
- 
-    public function loginpage()
+    
+    
+    /**
+     * @Route("/login2", name="login2")
+     */    
+    public function loginpage2()
     {
-        /**
-         * @Route("/login")
-         */
                return $this->render('adminpages/login.html.twig');
     }  
     
+    
+    /**
+     * @Route("/admin", name="admin")
+     */ 
     public function adminpage()
-    {
-        /**
-         * @Route("/admin")
-         */ 
-        
+    {    
         $comments = [
             'holix1','holix2','holix3'
         ];         
 
         
         
-        return $this->render('adminpages/base.html.twig',[
+        return $this->render('adminpages/admin.html.twig',[
             'title' => ucwords('notitle'),
             'comments' => $comments,
         ]);
