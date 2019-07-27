@@ -1,0 +1,8 @@
+{% extends 'enlaces.html.twig' %}
+{% block body %}
+    <h1>Create new Osc</h1>
+
+    {{ include('osc/_form.html.twig') }}
+
+    <a href="{{ path('osc_index') }}">back to list</a>
+{% endblock %}

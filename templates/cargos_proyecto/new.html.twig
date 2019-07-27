@@ -1,0 +1,9 @@
+{% extends 'enlaces.html.twig' %}
+
+{% block body %}
+    <h1>Create new CargosProyecto</h1>
+
+    {{ include('cargos_proyecto/_form.html.twig') }}
+
+    <a href="{{ path('cargos_proyecto_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'enlaces.html.twig' %}
+{% block body %}
+    <h1>Osc index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Ciudad</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Ruc</th>
+                <th>Estatutos</th>
+                <th>Cta_bancaria</th>
+                <th>Ci_representante</th>
+                <th>Ci_uafe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for osc in oscs %}
+            <tr>
+                <td>{{ osc.id }}</td>
+                <td>{{ osc.nombre }}</td>
+                <td>{{ osc.direccion }}</td>
+                <td>{{ osc.ciudad }}</td>
+                <td>{{ osc.email }}</td>
+                <td>{{ osc.telefono }}</td>
+                <td>{{ osc.ruc }}</td>
+                <td>{{ osc.estatutos }}</td>
+                <td>{{ osc.ctaBancaria }}</td>
+                <td>{{ osc.ciRepresentante }}</td>
+                <td>{{ osc.ciUafe }}</td>
+                <td>
+                    <a href="{{ path('osc_show', {'id': osc.id}) }}">show</a>
+                    <a href="{{ path('osc_edit', {'id': osc.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('osc_new') }}">Create new</a>
+{% endblock %}

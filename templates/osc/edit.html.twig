@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Osc</title>
+
+{% block body %}
+    <h1>Edit Osc</h1>
+
+    {{ include('osc/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('osc_index') }}">back to list</a>
+
+    {{ include('osc/_delete_form.html.twig') }}
+{% endblock %}

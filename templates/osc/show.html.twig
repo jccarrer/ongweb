@@ -1,0 +1,59 @@
+{% extends 'enlaces.html.twig' %}
+{% block body %}
+    <h1>Osc</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ osc.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ osc.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ osc.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Ciudad</th>
+                <td>{{ osc.ciudad }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ osc.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ osc.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Ruc</th>
+                <td>{{ osc.ruc }}</td>
+            </tr>
+            <tr>
+                <th>Estatutos</th>
+                <td>{{ osc.estatutos }}</td>
+            </tr>
+            <tr>
+                <th>Cta_bancaria</th>
+                <td>{{ osc.ctaBancaria }}</td>
+            </tr>
+            <tr>
+                <th>Ci_representante</th>
+                <td>{{ osc.ciRepresentante }}</td>
+            </tr>
+            <tr>
+                <th>Ci_uafe</th>
+                <td>{{ osc.ciUafe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('osc_index') }}">back to list</a>
+
+    <a href="{{ path('osc_edit', {'id': osc.id}) }}">edit</a>
+
+    {{ include('osc/_delete_form.html.twig') }}
+{% endblock %}

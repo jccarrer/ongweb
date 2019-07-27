@@ -5,6 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 /**
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -31,6 +34,15 @@ class User implements UserInterface
      * @ORM\Column(type="json_array")
      */
     private $roles= [];
+    
+     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Osc", mappedBy="usuario")
+     */
+    private $osc;
+
+    
+
+ 
     public function getId()
     {
         return $this->id;
@@ -75,5 +87,32 @@ class User implements UserInterface
     public function eraseCredentials()
     {
     }
+
+
+    
+    
+    public function __construct()
+    {
+        $this->osc = new ArrayCollection();
+    }    
+    
+    /**
+     * @return Collection|Osc[]
+     */
+    public function getOsc(): Collection
+    {
+        return $this->osc;
+    }
+     public function setOsc($osc)
+    {
+        $this->osc = $osc;
+        return $this;
+    }   
+    
+    
+     public function __toString() {
+        return $this->username;
+    }
+
     
 }

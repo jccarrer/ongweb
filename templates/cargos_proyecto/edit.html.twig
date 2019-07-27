@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit CargosProyecto</title>
+
+{% block body %}
+    <h1>Edit CargosProyecto</h1>
+
+    {{ include('cargos_proyecto/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('cargos_proyecto_index') }}">back to list</a>
+
+    {{ include('cargos_proyecto/_delete_form.html.twig') }}
+{% endblock %}
