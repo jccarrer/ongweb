@@ -9,25 +9,49 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class OscType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('direccion')
-            ->add('ciudad')
-            ->add('email')
-            ->add('telefono')
-            ->add('ruc')
-            ->add('estatutos')
-            ->add('cta_bancaria')
-            ->add('ci_representante')
-            ->add('ci_uafe')
-            ->add('usuario')
+            ->add('nombre', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('direccion', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('ciudad', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('email', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('telefono', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('ruc', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('estatutos', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('cta_bancaria', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('ci_representante', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('ci_uafe', TextType::class, [
+            'attr' => ['class' => 'form-control ']
+        ])
+            ->add('user', EntityType::class, [
+            'class' => 'App\Entity\User',
+            'placeholder' => 'Seleccione un usuario',
+             'attr' => ['class' => 'form-control ']   
+        ])                
         ;
     }
 

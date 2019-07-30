@@ -1,5 +1,11 @@
 
-{{ form_start(form, {'attr': {'class': 'form-horizontal'}})}}
+{{ form_start(form) }}
+<div class="box-body">
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+ </div> 
+    <div class="box-footer">
+        <button class="btn  btn-primary">{{ button_label|default('Save') }}</button>
+        
+        <a class="btn btn-primary" href="{{ path('cargos_index') }}">Back</a>
+     </div>
 {{ form_end(form) }}

@@ -71,7 +71,7 @@ class Osc
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\User",inversedBy="osc")
      */
-    private $usuario;
+    private $user;
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Proyecto", mappedBy="osc")
      */
@@ -210,17 +210,17 @@ class Osc
 
     
      /**
-     * @return Collection|Usuario[]
+     * @return Collection|User[]
      */   
     
-    public function getUsuario(): Collection
+    public function getUser(): ?user
     {
-        return $this->usuario;
+        return $this->user;
     }
 
-    public function setUsuario(?user $usuario): self
+    public function setUser(?user $user): self
     {
-        $this->usuario = $usuario;
+        $this->user = $user;
 
         return $this;
     }

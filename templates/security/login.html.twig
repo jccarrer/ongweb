@@ -19,7 +19,12 @@
     <p class="login-box-msg">Ingresa tus datos para iniciar sesión</p>
 
     {% if error %}
-        <span class="help-block">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+<!--        <span class="help-block">{{ error.messageKey|trans(error.messageData, 'security') }}</span>-->
+      <div class="callout callout-warning">
+                <h4>Usuario o contraseña invalidos</h4>
+
+                <p>Porfavor revisa tu usuario o contraseña ingresados y vuelve a intentarlo.</p>
+      </div>
     {% endif %}
 
       

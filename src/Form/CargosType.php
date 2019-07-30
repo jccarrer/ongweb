@@ -23,6 +23,10 @@ class CargosType extends AbstractType
             'attr' => ['class' => 'form-control ']
         ]);
         ;
+//        $builder
+//            ->add('nombre', TextType::class)
+//            ->add('descripcion', TextType::class)
+//        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

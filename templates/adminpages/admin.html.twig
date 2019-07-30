@@ -120,15 +120,16 @@
                   <ul class="sidebar-menu tree" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active treeview menu-open">
-                      <a href="#">
+                      <a href="{{ path('osc_index')}}">
                         <i class="fa fa-bank"></i> <span>Organizaciones</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
                       </a>
                       <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Ver todas</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>
+                        <li><a href="{{ path('osc_index')}}"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+<!--                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>-->
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li> 
                       </ul>
                     </li>
                 
@@ -186,7 +187,7 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ path('osc_index')}}" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -194,7 +195,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>90<sup style="font-size: 20px">%</sup></h3>
+              <h3>90</h3>
 
               <p>Proyectos activos</p>
             </div>
@@ -255,7 +256,7 @@
             <div class="icon">
               <i class="fa  fa-users"></i>
             </div>
-            <a href="#" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ path('cargos_index')}}" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -263,7 +264,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>3<sup style="font-size: 20px">%</sup></h3>
+              <h3>3</h3>
 
               <p>Cargos por Proyecto</p>
             </div>

@@ -36,7 +36,7 @@ class User implements UserInterface
     private $roles= [];
     
      /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Osc", mappedBy="usuario")
+     * @ORM\OneToOne(targetEntity="App\Entity\Osc", mappedBy="user")
      */
     private $osc;
 

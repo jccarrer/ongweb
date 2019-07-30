@@ -6,7 +6,7 @@
         <div class="wrapper">
           <header class="main-header">
             <!-- Logo -->
-            <a href="#" class="logo">
+            <a href="{{ path('admin') }}"  class="logo">
               <!-- mini logo for sidebar mini 50x50 pixels -->
               <span class="logo-mini"><b>A</b>LT</span>
               <!-- logo for regular state and mobile devices -->
@@ -170,16 +170,30 @@
     </section>
 
 
+<section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Nuevo Cargos</h3>
+              </div>      
     
-      
+           
       
       
 
     {{ include('cargos/_form.html.twig') }}
 
-    <a href="{{ path('cargos_index') }}">back to list</a>
+    
 
 
+
+            </div>
+          </div>
+        </div>
+</section> 
       
      <!-- /.content -->
   </div>
