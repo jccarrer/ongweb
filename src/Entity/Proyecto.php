@@ -54,11 +54,18 @@ class Proyecto
      */
     private $cargosProyectos;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Resultados", mappedBy="proyecto")
+     */
+    private $resultados;
 
+ 
 
     public function __construct()
     {
         $this->cargosProyectos = new ArrayCollection();
+        $this->presupuesto = new ArrayCollection();
+        $this->resultados = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -169,9 +176,41 @@ class Proyecto
         return $this;
     }
 
-    public function __toString() {
-        return $this->nombre;
+
+    /**
+     * @return Collection|Resultados[]
+     */
+    public function getResultados(): Collection
+    {
+        return $this->resultados;
     }
 
+    public function addResultado(Resultados $resultado): self
+    {
+        if (!$this->resultados->contains($resultado)) {
+            $this->resultados[] = $resultado;
+            $resultado->setProyecto($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResultado(Resultados $resultado): self
+    {
+        if ($this->resultados->contains($resultado)) {
+            $this->resultados->removeElement($resultado);
+            // set the owning side to null (unless already changed)
+            if ($resultado->getProyecto() === $this) {
+                $resultado->setProyecto(null);
+            }
+        }
+
+        return $this;
+    }
+
+ 
+     public function __toString() {
+        return $this->nombre;
+    }
 
 }
