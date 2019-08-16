@@ -8,6 +8,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use App\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -38,6 +40,15 @@ class OscType extends AbstractType
             ->add('estatutos', TextType::class, [
             'attr' => ['class' => 'form-control ']
         ])
+
+
+ //           ->add('estatutos', FileType::class, [
+//			'mapped'=>true,
+ //           'attr' => ['class' => 'form-control ']
+ //       ])
+
+
+
             ->add('cta_bancaria', TextType::class, [
             'attr' => ['class' => 'form-control ']
         ])

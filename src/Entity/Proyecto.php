@@ -68,7 +68,7 @@ class Proyecto
 
     public function getOsc(): ?osc
     {
-        return (string) $this->osc;
+        return  $this->osc;
     }
 
     public function setOsc(?osc $osc): self

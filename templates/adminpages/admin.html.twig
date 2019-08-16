@@ -20,7 +20,7 @@
 
               <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                  
+                    
                     
                     
                     
@@ -132,6 +132,22 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li> 
                       </ul>
                     </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>Proyectos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
                 
                     <li class="treeview">
                       <a href="#">
@@ -146,6 +162,39 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
                       </ul>
                     </li>
+
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cube"></i>
+                        <span>Cargos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('cargos_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+					
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>CargosPorProyecto</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('cargos_proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
 
                     </ul>
            
@@ -197,12 +246,12 @@
             <div class="inner">
               <h3>90</h3>
 
-              <p>Proyectos activos</p>
+              <p>Proyectos</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ path('proyecto_index')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

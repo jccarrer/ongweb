@@ -67,6 +67,9 @@ class User implements UserInterface
         }
         return $this;
     }
+
+
+
     public function getRoles()
     {
         $roles = $this->roles;
@@ -80,6 +83,9 @@ class User implements UserInterface
         $this->roles = $roles;
         return $this;
     }
+
+
+
     public function getSalt()
     {
         return null;
