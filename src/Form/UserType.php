@@ -32,16 +32,14 @@ class UserType extends AbstractType
 
             
 
-
-
-            ->add('roles', TextType::class, [
+ /*           ->add('roles', TextType::class, [
             'attr' => ['class' => 'form-control ']
         ]);
 
-      
+ */     
             
             
-        $builder->get('roles')
+ /*       $builder->get('roles')
             ->addModelTransformer(new CallbackTransformer(
                 function ($rolesAsArray) {
                     // transform the array to a string
@@ -54,14 +52,16 @@ class UserType extends AbstractType
             ))         
             
             
-            
+    */        
         ;
+
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(array(
             'data_class' => User::class,
-        ]);
+        ));
     }
 }

@@ -114,4 +114,8 @@ class Indicadores
 
         return $this;
     }
+
+     public function __toString() {
+        return $this->detalle;
+    } 
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<title>Resultados index</title>
+
+{% block body %}
+    <h1>Resultados index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Presupuesto</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for resultado in resultados %}
+            <tr>
+                <td>{{ resultado.id }}</td>
+                <td>{{ resultado.nombre }}</td>
+                <td>{{ resultado.descripcion }}</td>
+                <td>{{ resultado.presupuesto }}</td>
+                <td>
+                    <a href="{{ path('resultados_show', {'id': resultado.id}) }}">show</a>
+                    <a href="{{ path('resultados_edit', {'id': resultado.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('resultados_new') }}">Create new</a>
+{% endblock %}

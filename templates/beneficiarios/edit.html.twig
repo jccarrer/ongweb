@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Beneficiarios</title>
+
+{% block body %}
+    <h1>Edit Beneficiarios</h1>
+
+    {{ include('beneficiarios/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('beneficiarios_index') }}">back to list</a>
+
+    {{ include('beneficiarios/_delete_form.html.twig') }}
+{% endblock %}

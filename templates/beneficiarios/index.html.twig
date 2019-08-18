@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<title>Beneficiarios index</title>
+
+{% block body %}
+    <h1>Beneficiarios index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Identificacion</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Genero</th>
+                <th>Correo</th>
+                <th>Edad</th>
+                <th>Discapacitado</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for beneficiario in beneficiarios %}
+            <tr>
+                <td>{{ beneficiario.id }}</td>
+                <td>{{ beneficiario.identificacion }}</td>
+                <td>{{ beneficiario.nombres }}</td>
+                <td>{{ beneficiario.apellidos }}</td>
+                <td>{{ beneficiario.genero }}</td>
+                <td>{{ beneficiario.correo }}</td>
+                <td>{{ beneficiario.edad }}</td>
+                <td>{{ beneficiario.discapacitado ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('beneficiarios_show', {'id': beneficiario.id}) }}">show</a>
+                    <a href="{{ path('beneficiarios_edit', {'id': beneficiario.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('beneficiarios_new') }}">Create new</a>
+{% endblock %}

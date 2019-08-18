@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<title>Beneficiarios</title>
+
+{% block body %}
+    <h1>Beneficiarios</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ beneficiario.id }}</td>
+            </tr>
+            <tr>
+                <th>Identificacion</th>
+                <td>{{ beneficiario.identificacion }}</td>
+            </tr>
+            <tr>
+                <th>Nombres</th>
+                <td>{{ beneficiario.nombres }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ beneficiario.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Genero</th>
+                <td>{{ beneficiario.genero }}</td>
+            </tr>
+            <tr>
+                <th>Correo</th>
+                <td>{{ beneficiario.correo }}</td>
+            </tr>
+            <tr>
+                <th>Edad</th>
+                <td>{{ beneficiario.edad }}</td>
+            </tr>
+            <tr>
+                <th>Discapacitado</th>
+                <td>{{ beneficiario.discapacitado ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('beneficiarios_index') }}">back to list</a>
+
+    <a href="{{ path('beneficiarios_edit', {'id': beneficiario.id}) }}">edit</a>
+
+    {{ include('beneficiarios/_delete_form.html.twig') }}
+{% endblock %}

@@ -78,11 +78,11 @@ class User implements UserInterface
         }
         return $roles;
     }
-    public function setRoles($roles)
+    /*public function setRoles($roles)
     {
         $this->roles = $roles;
         return $this;
-    }
+    }*/
 
 
 
@@ -99,7 +99,9 @@ class User implements UserInterface
     
     public function __construct()
     {
-        $this->osc = new ArrayCollection();
+        
+		$this->roles = array('ROLE_USER');
+
     }    
     
     /**

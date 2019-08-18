@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Resultados</title>
+
+{% block body %}
+    <h1>Edit Resultados</h1>
+
+    {{ include('resultados/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('resultados_index') }}">back to list</a>
+
+    {{ include('resultados/_delete_form.html.twig') }}
+{% endblock %}

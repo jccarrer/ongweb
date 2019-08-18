@@ -1,13 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\config",
     "\\src",
-    "\\src\\Controller",
-    "\\src\\Form",
-    "\\src\\Repository",
+    "\\src\\DataFixtures",
     "\\templates",
-    "\\templates\\proyecto"
+    "\\templates\\adminpages",
+    "\\templates\\beneficiarios",
+    "\\templates\\documentos_verificacion",
+    "\\templates\\resultados",
+    "\\templates\\security",
+    "\\templates\\user"
   ],
-  "SelectedNode": "\\templates\\proyecto\\new.html.twig",
+  "SelectedNode": "\\config\\routes.yaml",
   "PreviewInSolutionExplorer": false
 }

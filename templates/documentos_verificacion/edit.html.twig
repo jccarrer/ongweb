@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit DocumentosVerificacion</title>
+
+{% block body %}
+    <h1>Edit DocumentosVerificacion</h1>
+
+    {{ include('documentos_verificacion/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('documentos_verificacion_index') }}">back to list</a>
+
+    {{ include('documentos_verificacion/_delete_form.html.twig') }}
+{% endblock %}

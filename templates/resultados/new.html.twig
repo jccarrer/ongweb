@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Resultados</title>
+
+{% block body %}
+    <h1>Create new Resultados</h1>
+
+    {{ include('resultados/_form.html.twig') }}
+
+    <a href="{{ path('resultados_index') }}">back to list</a>
+{% endblock %}

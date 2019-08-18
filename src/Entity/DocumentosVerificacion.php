@@ -31,6 +31,11 @@ class DocumentosVerificacion
      */
     private $material_entregado_url;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $foto_url;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class DocumentosVerificacion
     public function setMaterialEntregadoUrl(string $material_entregado_url): self
     {
         $this->material_entregado_url = $material_entregado_url;
+
+        return $this;
+    }
+
+    public function getFotoUrl(): ?string
+    {
+        return $this->foto_url;
+    }
+
+    public function setFotoUrl(string $foto_url): self
+    {
+        $this->foto_url = $foto_url;
 
         return $this;
     }

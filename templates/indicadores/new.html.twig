@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Indicadores</title>
+
+{% block body %}
+    <h1>Create new Indicadores</h1>
+
+    {{ include('indicadores/_form.html.twig') }}
+
+    <a href="{{ path('indicadores_index') }}">back to list</a>
+{% endblock %}

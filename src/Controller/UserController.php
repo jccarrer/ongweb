@@ -9,14 +9,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Osc;
+
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("admin/user")
  */
 class UserController extends AbstractController
-{
+{	
+
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
@@ -30,20 +31,25 @@ class UserController extends AbstractController
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+	 
+    public function new(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+		// 1) build the form
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
 
+        // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
-
             // 3) Encode the password (you could also do this via Doctrine listener)
-            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
 
+			/*
+			$roles=$user->getRoles();
+			$user->setRoles([$roles]);*/
 			// 4) save the User!
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<title>Actividades index</title>
+
+{% block body %}
+    <h1>Actividades index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Fecha_inicio</th>
+                <th>Fecha_final</th>
+                <th>Identificacion_docente</th>
+                <th>Nombres_apellidos_docente</th>
+                <th>Presupuesto_proyectado</th>
+                <th>Presupuesto_ejecutado</th>
+                <th>Presupuesto_avance</th>
+                <th>Meta</th>
+                <th>Avances</th>
+                <th>Estado</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actividade in actividades %}
+            <tr>
+                <td>{{ actividade.id }}</td>
+                <td>{{ actividade.nombre }}</td>
+                <td>{{ actividade.fechaInicio }}</td>
+                <td>{{ actividade.fechaFinal }}</td>
+                <td>{{ actividade.identificacionDocente }}</td>
+                <td>{{ actividade.nombresApellidosDocente }}</td>
+                <td>{{ actividade.presupuestoProyectado }}</td>
+                <td>{{ actividade.presupuestoEjecutado }}</td>
+                <td>{{ actividade.presupuestoAvance }}</td>
+                <td>{{ actividade.meta }}</td>
+                <td>{{ actividade.avances }}</td>
+                <td>{{ actividade.estado }}</td>
+                <td>
+                    <a href="{{ path('actividades_show', {'id': actividade.id}) }}">show</a>
+                    <a href="{{ path('actividades_edit', {'id': actividade.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('actividades_new') }}">Create new</a>
+{% endblock %}

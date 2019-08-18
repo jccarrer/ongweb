@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Indicadores</title>
+
+{% block body %}
+    <h1>Edit Indicadores</h1>
+
+    {{ include('indicadores/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('indicadores_index') }}">back to list</a>
+
+    {{ include('indicadores/_delete_form.html.twig') }}
+{% endblock %}
