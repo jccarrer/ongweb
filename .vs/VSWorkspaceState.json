@@ -7,11 +7,10 @@
     "\\templates",
     "\\templates\\adminpages",
     "\\templates\\beneficiarios",
+    "\\templates\\cargos",
     "\\templates\\documentos_verificacion",
-    "\\templates\\resultados",
-    "\\templates\\security",
-    "\\templates\\user"
+    "\\templates\\resultados"
   ],
-  "SelectedNode": "\\config\\routes.yaml",
+  "SelectedNode": "\\templates\\cargos\\index.html.twig",
   "PreviewInSolutionExplorer": false
 }

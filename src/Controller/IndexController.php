@@ -31,15 +31,7 @@ use App\Repository\OscRepository;
 
 class IndexController extends AbstractController
 {
-    /**
-     * @Route("/", name="index")
-     */
-    public function index()
-    {
-//        return $this->render('index.html.twig');
-        return $this->redirectToRoute('login');
 
-    }
     
     
     /**
@@ -47,7 +39,7 @@ class IndexController extends AbstractController
      */    
     public function loginpage2()
     {
-               return $this->render('index.html.twig');
+               return $this->render('content.html.twig');
     }  
     
     
