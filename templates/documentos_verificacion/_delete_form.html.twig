@@ -1,5 +1,5 @@
 <form method="post" action="{{ path('documentos_verificacion_delete', {'id': documentos_verificacion.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ documentos_verificacion.id) }}">
-    <button class="btn">Delete</button>
+      <button style="margin-top: -73px; margin-left: 188px;" class="btn  btn-primary">Borrar</button>
 </form>

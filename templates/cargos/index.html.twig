@@ -120,20 +120,7 @@
                   <!-- sidebar menu: : style can be found in sidebar.less -->
                   <ul class="sidebar-menu tree" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview menu-open">
-                      <a href="#">
-                        <i class="fa fa-bank"></i> <span>Organizaciones</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Ver todas</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>
-                      </ul>
-                    </li>
-                
-                    <li class="treeview">
+                     <li class="treeview">
                       <a href="#">
                         <i class="fa fa-users"></i>
                         <span>Usuarios</span>
@@ -143,10 +130,118 @@
                       </a>
                       <ul class="treeview-menu">
                         <li><a href="{{ path('user_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('user_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+                    <li class="treeview">
+                      <a href="{{ path('osc_index')}}">
+                        <i class="fa fa-bank"></i> <span>Organizaciones</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('osc_index')}}"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+<!--                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>-->
+                        <li><a href="{{ path('osc_new')}}"><i class="fa fa-circle-o"></i> Crear nueva</a></li> 
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>Proyectos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('proyecto_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+					
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>CargosPorProyecto</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('cargos_proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('cargos_proyecto_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cube"></i>
+                        <span>Resultados</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('resultados_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
                       </ul>
                     </li>
-                    
+
+
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cube"></i>
+                        <span>Indicadores</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('indicadores_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('indicadores_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-calendar"></i>
+                        <span>Actividades</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('actividades_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('actividades_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-image"></i>
+                        <span>Documentos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('documentos_verificacion_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('documentos_verificacion_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
                   </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -212,23 +307,12 @@
 
         </div>
         
- <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li></ul></div>        
-        <a class="btn  btn-default" href="{{ path('cargos_new') }}">Create new</a>
+        <a class="btn  btn-default" href="{{ path('cargos_new') }}">Nuevo</a>
         
        
         
     </div>
-    
-        
-    
-<!--
-    <div class="col-sm-5">
-        <a class="btn  btn-default" href="{{ path('cargos_new') }}">Create new</a>
-    </div>
-    <div class="col-sm-7">
-        <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li></ul></div>
-    </div>
--->
+
     
     
 </div><!-- END Content Wrapper. Contains page content -->   

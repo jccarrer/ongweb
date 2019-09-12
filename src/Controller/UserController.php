@@ -12,6 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+// Include paginator interface
+use Knp\Component\Pager\PaginatorInterface;
+
+
 /**
  * @Route("admin/user")
  */
@@ -21,10 +25,25 @@ class UserController extends AbstractController
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(UserRepository $userRepository, PaginatorInterface $paginator,Request $request): Response
     {
+		
+		$allusers = $userRepository->findAll();
+
+		// Paginate the results of the query
+        $users = $paginator->paginate(
+            // Doctrine Query, not results
+            $allusers,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            3
+        );
+
+
+
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
+            'users' => $users,
         ]);
     }
 
@@ -77,13 +96,24 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            
+
+            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($password);
+
+
+
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+			$entityManager->flush();
+			//$this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('user_index', [
                 'id' => $user->getId(),

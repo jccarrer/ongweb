@@ -34,7 +34,7 @@ class Indicadores
     private $meta;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Actividades", mappedBy="indicadores")
+     * @ORM\OneToMany(targetEntity="App\Entity\Actividades", mappedBy="indicadores",cascade="remove")
      */
     private $actividades;
 

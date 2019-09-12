@@ -50,12 +50,12 @@ class Proyecto
     private $inversiones;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CargosProyecto", mappedBy="proyecto")
+     * @ORM\OneToMany(targetEntity="App\Entity\CargosProyecto", mappedBy="proyecto",cascade="remove")
      */
     private $cargosProyectos;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Resultados", mappedBy="proyecto")
+     * @ORM\OneToMany(targetEntity="App\Entity\Resultados", mappedBy="proyecto",cascade="remove")
      */
     private $resultados;
 

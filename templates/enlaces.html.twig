@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  lang="es">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}OngSystem{% endblock %}</title>
@@ -23,12 +23,16 @@
 <!--          <link rel="stylesheet" href="{{ asset('adminLTEstyle/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">-->
           <!-- Daterange picker -->
 <!--          <link rel="stylesheet" href="{{ asset('adminLTEstyle/bootstrap-daterangepicker/daterangepicker.css') }}">-->
-          <!-- bootstrap wysihtml5 - text editor -->
-          <link rel="stylesheet" href="{{ asset('adminLTEstyle/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">         <!-- iCheck -->  
+          <!-- iCheck -->  
           <link rel="stylesheet" href="{{ asset('adminLTEstyle/iCheck/square/blue.css') }}">
-        
-        
-<!--            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
+
+
+            <!-- DataTables -->
+            <link rel="stylesheet" href="{{ asset('datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+
+
+
+              <!--            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
              
             <!-- Google Font -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -68,9 +72,7 @@
 -->
             <!-- datepicker -->
 <!--            <script src="{{ asset('adminLTEstyle/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>-->
-            <!-- Bootstrap WYSIHTML5 -->
-<!--            <script src="{{ asset('adminLTEstyle/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>-->
-        
+  
         
         
             <!-- Slimscroll -->
@@ -94,8 +96,18 @@
                 });
               });
             </script>
-        
-        
-        {% endblock %}  
+
+      <!-- DataTables -->
+      <script src="{{ asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
+
+      <script src="{{ asset('datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+      <script>
+        $(function () {
+        $('#example1').DataTable()
+        })
+      </script>   
+      
+      
+      {% endblock %}
     </body>
 </html>

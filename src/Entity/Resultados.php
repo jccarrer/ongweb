@@ -39,7 +39,7 @@ class Resultados
     private $proyecto;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Indicadores", mappedBy="resultados")
+     * @ORM\OneToMany(targetEntity="App\Entity\Indicadores", mappedBy="resultados",cascade="remove")
      */
     private $indicadores;
 

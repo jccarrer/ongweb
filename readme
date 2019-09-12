@@ -6,3 +6,65 @@ mytestkey
 a23456789a23456789a23456789
 
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2+Z3emEy7zITBm5OErifu1mRIEfH7BYJnGjy6RCIF4VNbwYWFcUbePAd3u6qupqipEC/5C3JCEYGDcMxxrCqsgXCI06slfCh8pP0apZEj2cCY6EhuHDAMTeMWvXCeJ0xInY8Vtd8K/i7ogI7GlrGasqvS0MmwXaUJSFyRDFxhm9gHbzJMeyD8QPq78Mz+pmUaPPfTaUR3Ma7J+Ui8LtnhsdOmDIDFDw28TOylvWCYLxBMXpR55H/rt7tO1rXwsO5BPn5rENvDEjgIV4+IDWluOXjBqPv39BeaY4HMB6NuKjD7OCNKmUYMwpAQgzSLyk7U5U6MHxb55fbGSGTCh8FJ
+
+
+modifique el:
+	packages/translation  (lo puse en espanol)
+
+
+
+codigo para slider
+		<div class="col-md-6">
+          <div class="box box-solid">
+            <!--div class="box-header with-border">
+              <h3 class="box-title">Carousel</h3>
+            </div-->
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="{{ asset('dist/img/img1.png' )}}" alt="First slide">
+
+                    <div class="carousel-caption">
+                      
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="{{ asset('dist/img/img2.png' )}}" alt="Second slide">
+
+                    <div class="carousel-caption">
+                      
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="{{ asset('dist/img/img3.png' )}}" alt="Third slide">
+
+                    <div class="carousel-caption">
+                      
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="fa fa-angle-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="fa fa-angle-right"></span>
+                </a>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+
+
+Verde=Finalizado; 
+Amarillo=En ejecución y 
+Rojo=Si la fecha actual es mayor a la fecha de finalización

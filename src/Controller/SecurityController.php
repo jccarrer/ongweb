@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 
 use App\Entity\Proyecto;
+use App\Entity\Actividades;
 
 use App\Repository\DocumentosVerificacionRepository;
 use App\Repository\ActividadesRepository;
@@ -25,6 +26,12 @@ use App\Repository\UserRepository;
 use App\Repository\ProyectoRepository;
 use App\Repository\OscRepository;
 
+
+use App\Entity\Beneficiarios;
+use App\Form\BeneficiariosType;
+
+// Include paginator interface
+use Knp\Component\Pager\PaginatorInterface;
 
 
 
@@ -66,9 +73,9 @@ class SecurityController extends AbstractController
 
 
     /**
-     * @Route("/{id}", name="usuario_proyecto_show", methods={"GET"})
+     * @Route("/user/{id}", name="usuario_proyecto_show", methods={"GET"})
      */
-    public function show(Proyecto $proyecto, CargosProyectoRepository $cargosProyectoRepository,
+    public function show_usuario(Proyecto $proyecto, CargosProyectoRepository $cargosProyectoRepository,
 	ActividadesRepository $actividadesRepository, IndicadoresRepository $indicadoresRepository,
 	ResultadosRepository $resultadosRepository): Response
     {
@@ -80,5 +87,81 @@ class SecurityController extends AbstractController
 			'resultados' => $resultadosRepository->findAll(),
         ]);
     }
+
+
+
+
+
+    /**
+     * @Route("/user/{id}/beneficiarios", name="beneficiarios_actividades_show", methods={"GET"})
+     */
+    public function show_usuario_beneficiarios(Actividades $actividad, CargosProyectoRepository $cargosProyectoRepository,
+	ActividadesRepository $actividadesRepository, IndicadoresRepository $indicadoresRepository,
+	ResultadosRepository $resultadosRepository, BeneficiariosRepository $beneficiariosRepository,
+	Request $request): Response
+    {	
+
+
+
+
+
+
+        return $this->render('security/beneficiarios_proyecto.html.twig', [
+            'actividad' => $actividad,
+			'cargos_proyectos' => $cargosProyectoRepository->findAll(),
+			'actividades' => $actividadesRepository->findAll(),
+			'indicadores' => $indicadoresRepository->findAll(),
+			'resultados' => $resultadosRepository->findAll(),
+			'beneficiarios' =>  $beneficiariosRepository->findAll(),
+        ]);
+    }
+
+
+
+
+
+    /**
+     * @Route("/user/beneficiarios/{id}/new", name="beneficiarios_actividades_new", methods={"GET","POST"})
+     */
+    public function show_usuario_beneficiarios_new(Request $request,Actividades $actividad, CargosProyectoRepository $cargosProyectoRepository,
+	ActividadesRepository $actividadesRepository, IndicadoresRepository $indicadoresRepository,
+	ResultadosRepository $resultadosRepository, BeneficiariosRepository $beneficiariosRepository): Response
+    {
+        $beneficiario = new Beneficiarios();
+        $form = $this->createForm(BeneficiariosType::class, $beneficiario);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $entityManager->persist($beneficiario);
+            $entityManager->flush();
+
+           return $this->redirectToRoute('beneficiarios_actividades_show', [
+                'id' => $actividad->getId(),
+            ]);
+        }
+		
+
+
+
+
+
+        return $this->render('security/beneficiarios_proyecto_new.html.twig', [
+            'beneficiario' => $beneficiario,
+            'form' => $form->createView(),			
+			'actividad' => $actividad,
+			'cargos_proyectos' => $cargosProyectoRepository->findAll(),
+			'actividades' => $actividadesRepository->findAll(),
+			'indicadores' => $indicadoresRepository->findAll(),
+			'resultados' => $resultadosRepository->findAll(),
+			'beneficiarios' => $beneficiariosRepository->findAll(),
+        ]);
+    }
+
+
+
+
+
 
 }

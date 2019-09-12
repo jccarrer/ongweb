@@ -10,6 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+// Include paginator interface
+use Knp\Component\Pager\PaginatorInterface;
+
+
 /**
  * @Route("/admin/proyecto")
  */
@@ -18,10 +22,28 @@ class ProyectoController extends AbstractController
     /**
      * @Route("/", name="proyecto_index", methods={"GET"})
      */
-    public function index(ProyectoRepository $proyectoRepository): Response
-    {
+    public function index(ProyectoRepository $proyectoRepository, PaginatorInterface $paginator,Request $request): Response
+    {	
+
+		
+		$allproyectos = $proyectoRepository->findAll();
+
+		// Paginate the results of the query
+        $proyectos = $paginator->paginate(
+            // Doctrine Query, not results
+            $allproyectos,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            2
+        );
+
+
+
+
+
         return $this->render('proyecto/index.html.twig', [
-            'proyectos' => $proyectoRepository->findAll(),
+            'proyectos' => $proyectos,
         ]);
     }
 

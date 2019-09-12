@@ -1,0 +1,385 @@
+{% extends 'enlaces.html.twig' %}
+
+{% block title %}OngSystem {% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_USER') %}
+
+
+<body class="hold-transition skin-blue layout-top-nav ">
+<div class="wrapper">
+
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="{{ path('login') }}" class="navbar-brand"><b>Admin</b>LTE</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+   
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+
+
+            <!-- User Account Menu -->
+            <li class="dropdown user user-menu">
+              <!-- Menu Toggle Button -->
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- The user image in the navbar-->
+                <img src="{{ asset('dist/img/user2-160x160.jpg' )}}" class="user-image" alt="User Image">
+                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                <span class="hidden-xs">{{ app.user.username }} </span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- The user image in the menu -->
+                <li class="user-header">
+                  <img src="{{ asset('dist/img/user2-160x160.jpg' )}}" class="img-circle" alt="User Image">
+
+                  <p>
+                    {{ app.user.username }}  - User
+                    <small>Bienvenido {{ app.user.username }}</small>
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <!--li class="user-body">
+                  <div class="row">
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Sales</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Friends</a>
+                    </div>
+                  </div>
+                </li-->
+                <!-- Menu Footer-->
+                <li class="user-footer">
+   
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-custom-menu -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+    <div class="container">
+	
+
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Mis Beneficiarios
+          
+        </h1>
+        <ol class="breadcrumb">
+          <li><i class="fa fa-dashboard"></i> Admin</li>
+          <li>{{ (actividad.nombre |length > 50 ? actividad.nombre|slice(0, 50) ~ '...' : actividad.nombre   ) }}</li>
+          <li >Beneficiarios</li>
+		  <li class="active">Nuevo</li>
+        </ol>
+      </section>
+
+
+
+
+      <!-- Main content -->
+      <section class="invoice">
+		   <div class="row">
+				<div class="col-xs-12">
+				  <h2 class="page-header">
+					<i class="fa fa-globe"></i>NUEVO BENEFICIARIO
+					<small class="pull-right">Fecha Actualizada: {{ "now"|date("d/m/Y", "America/Guayaquil") }}</small>
+				  </h2>
+				</div>
+		   </div>
+
+
+
+
+				 
+
+
+
+
+
+
+
+
+
+
+				
+				<!-- Main content -->
+			<section class="content">
+				<div class="row">
+				<div class="col-xs-12 col-md-4">
+
+
+						
+      
+			<div class="box-body">
+				
+				{{ form_start(form) }}
+			</div>			
+					
+					{{ form_row(form.identificacion) }}
+					{{ form_row(form.nombres) }}
+					{{ form_row(form.apellidos) }}
+					{{ form_row(form.genero) }}
+					{{ form_row(form.correo) }}
+					{{ form_row(form.edad) }}
+					{{ form_row(form.discapacitado) }}
+					<div class="hidden">
+						{{ form_row(form.actividades, {
+							label: 'Actividades',
+							'value': actividad.id ~"",
+						}) }}
+					</div>
+				<div class="box-footer">
+					<button class="btn btn-default">{{ button_label|default('Save') }}</button>
+				</div>
+				{{ form_end(form) }}
+				
+
+
+				</div>
+				</div>
+			</section>
+
+					
+
+
+
+
+
+	
+
+
+
+
+      <!-- /.row (main row) -->
+				  
+
+
+		<!-- Main content -->
+		</section>
+
+
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 2.0
+      </div>
+      <strong>Copyright &copy; 2019-2020 <a href="https://www.virtualweb.com.ec/">VirtualWeb</a>.</strong> Todos los derechos reservados.
+    
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+
+
+<script>
+  $(function () {
+    /* jQueryKnob */
+
+    $(".knob").knob({
+      /*change : function (value) {
+       //console.log("change : " + value);
+       },
+       release : function (value) {
+       console.log("release : " + value);
+       },
+       cancel : function () {
+       console.log("cancel : " + this.value);
+       },*/
+      draw: function () {
+
+        // "tron" case
+        if (this.$.data('skin') == 'tron') {
+
+          var a = this.angle(this.cv)  // Angle
+              , sa = this.startAngle          // Previous start angle
+              , sat = this.startAngle         // Start angle
+              , ea                            // Previous end angle
+              , eat = sat + a                 // End angle
+              , r = true;
+
+          this.g.lineWidth = this.lineWidth;
+
+          this.o.cursor
+          && (sat = eat - 0.3)
+          && (eat = eat + 0.3);
+
+          if (this.o.displayPrevious) {
+            ea = this.startAngle + this.angle(this.value);
+            this.o.cursor
+            && (sa = ea - 0.3)
+            && (ea = ea + 0.3);
+            this.g.beginPath();
+            this.g.strokeStyle = this.previousColor;
+            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+            this.g.stroke();
+          }
+
+          this.g.beginPath();
+          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+          this.g.stroke();
+
+          this.g.lineWidth = 2;
+          this.g.beginPath();
+          this.g.strokeStyle = this.o.fgColor;
+          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+          this.g.stroke();
+
+          return false;
+        }
+      }
+    });
+    /* END JQUERY KNOB */
+</script>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href=" #"> Manage users </a>
+			
+    {% endif%}
+
+    {% else %}
+
+    
+
+
+
+		<style>
+			.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+			.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+		</style>
+
+
+		<body class="hold-transition login-page">
+		<div class="login-box">
+		  <div class="login-logo">
+			<a href="#"><b>ONG</b>system</a>
+		  </div>
+		  <!-- /.login-logo -->
+		  <div class="login-box-body">
+			<p class="login-box-msg">Ingresa tus datos para iniciar sesión</p>
+
+			{% if error %}
+		<!--        <span class="help-block">{{ error.messageKey|trans(error.messageData, 'security') }}</span>-->
+			  <div class="callout callout-warning">
+						<h4>Usuario o contraseña invalidos</h4>
+
+						<p>Porfavor revisa tu usuario o contraseña ingresados y vuelve a intentarlo.</p>
+			  </div>
+			{% endif %}
+
+      
+		   <form action="{{ path('login') }}" method="post">
+			  <div class="form-group has-feedback">
+				<input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="Usuario"/>
+				<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			  </div>
+			  <div class="form-group has-feedback">
+				<input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña"/>
+				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+			  </div>         
+			  <div class="row">
+				<div class="col-xs-8">
+				  <div class="checkbox icheck">
+					<label>
+					  <input type="checkbox"> Recordar contraseña
+					</label>
+				  </div>
+				</div> 
+			{#
+				If you want to control the URL the user
+				is redirected to on success (more details below)
+				<input type="hidden" name="_target_path" value="/user" />
+			#}          
+				<!-- /.col -->
+				<div class="col-xs-4">
+				  <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+				</div>
+				<!-- /.col -->
+			  </div>
+			</form>
+
+		<!-- redes sociales para dsps
+			<div class="social-auth-links text-center">
+			  <p>- OR -</p>
+			  <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+				Facebook</a>
+			  <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+				Google+</a>
+			</div>
+		-->
+			<!-- /.social-auth-links -->
+
+		  </div>
+		  <!-- /.login-box-body -->
+		</div>
+		<!-- /.login-box -->
+
+
+
+
+
+
+
+
+		</body>
+
+
+	{% endif %}
+{% endblock %}
+
+

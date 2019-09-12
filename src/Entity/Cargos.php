@@ -29,7 +29,7 @@ class Cargos
     private $descripcion;
 
    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CargosProyecto", mappedBy="cargo")
+     * @ORM\OneToMany(targetEntity="App\Entity\CargosProyecto", mappedBy="cargo",cascade="remove")
      */
     private $cargosProyectos;
 

@@ -79,12 +79,12 @@ class Actividades
     private $estado;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\DocumentosVerificacion", mappedBy="actividades")
+     * @ORM\OneToMany(targetEntity="App\Entity\DocumentosVerificacion", mappedBy="actividades",cascade="remove")
      */
     private $documentosVerificacions;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Beneficiarios", mappedBy="actividades")
+     * @ORM\OneToMany(targetEntity="App\Entity\Beneficiarios", mappedBy="actividades",cascade="remove")
      */
     private $beneficiarios;
 

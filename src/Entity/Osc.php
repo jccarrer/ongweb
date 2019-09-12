@@ -73,7 +73,7 @@ class Osc
      */
     private $user;
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Proyecto", mappedBy="osc")
+     * @ORM\OneToMany(targetEntity="App\Entity\Proyecto", mappedBy="osc" ,cascade="remove")
      */
     private $proyectos;
 

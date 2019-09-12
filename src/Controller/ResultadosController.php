@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+// Include paginator interface
+use Knp\Component\Pager\PaginatorInterface;
+
 /**
  * @Route("admin/resultados")
  */
@@ -18,10 +21,25 @@ class ResultadosController extends AbstractController
     /**
      * @Route("/", name="resultados_index", methods={"GET"})
      */
-    public function index(ResultadosRepository $resultadosRepository): Response
+    public function index(ResultadosRepository $resultadosRepository, PaginatorInterface $paginator,Request $request): Response
     {
+
+		$allresultados = $resultadosRepository->findAll();
+
+        // Paginate the results of the query
+        $resultados = $paginator->paginate(
+            // Doctrine Query, not results
+            $allresultados,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            3
+        );
+
+
+
         return $this->render('resultados/index.html.twig', [
-            'resultados' => $resultadosRepository->findAll(),
+            'resultados' => $resultados,
         ]);
     }
 

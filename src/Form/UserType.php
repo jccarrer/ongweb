@@ -20,12 +20,14 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username',TextType::class, [
-            'attr' => ['class' => 'form-control ']
+            'attr' => ['class' => 'form-control']
         ])
             ->add('password', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'first_options'  => array('label' => 'Password',
+										'attr' => array('class' => 'form-control')),
+                'second_options' => array('label' => 'Repeat Password',
+										'attr' => array('class' => 'form-control')),
            
         ))
 

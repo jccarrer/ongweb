@@ -43,30 +43,13 @@
                         {% if is_granted('ROLE_ADMIN') %}
                             {{ app.user.username }}           
                         {% endif%}                             
-                            - Web Developer
-                          <small>Member since Nov. 2012</small>
+                           
+                          <small>Usuario loggeado como admnistrador</small>
                         </p>
                       </li>
-                      <!-- Menu Body -->
-                      <li class="user-body">
-                        <div class="row">
-                          <div class="col-xs-4 text-center">
-                            <a href="#">Followers</a>
-                          </div>
-                          <div class="col-xs-4 text-center">
-                            <a href="#">Sales</a>
-                          </div>
-                          <div class="col-xs-4 text-center">
-                            <a href="#">Friends</a>
-                          </div>
-                        </div>
-                        <!-- /.row -->
-                      </li>
+                    
                       <!-- Menu Footer-->
                       <li class="user-footer">
-                        <div class="pull-left">
-                          <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        </div>
                         <div class="pull-right">
                           <a href="{{ path('logout') }}" class="btn btn-default btn-flat">Sign out</a>
                         </div>
@@ -119,20 +102,7 @@
                   <!-- sidebar menu: : style can be found in sidebar.less -->
                   <ul class="sidebar-menu tree" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview menu-open">
-                      <a href="#">
-                        <i class="fa fa-bank"></i> <span>Organizaciones</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Ver todas</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>
-                      </ul>
-                    </li>
-                
-                    <li class="treeview">
+                     <li class="treeview">
                       <a href="#">
                         <i class="fa fa-users"></i>
                         <span>Usuarios</span>
@@ -142,10 +112,118 @@
                       </a>
                       <ul class="treeview-menu">
                         <li><a href="{{ path('user_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('user_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+                    <li class="treeview">
+                      <a href="{{ path('osc_index')}}">
+                        <i class="fa fa-bank"></i> <span>Organizaciones</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('osc_index')}}"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+<!--                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>-->
+                        <li><a href="{{ path('osc_new')}}"><i class="fa fa-circle-o"></i> Crear nueva</a></li> 
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>Proyectos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('proyecto_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+					
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>CargosPorProyecto</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('cargos_proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('cargos_proyecto_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cube"></i>
+                        <span>Resultados</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('resultados_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
                       </ul>
                     </li>
-                    
+
+
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cube"></i>
+                        <span>Indicadores</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('indicadores_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('indicadores_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-calendar"></i>
+                        <span>Actividades</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('actividades_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('actividades_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-image"></i>
+                        <span>Documentos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('documentos_verificacion_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('documentos_verificacion_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
                   </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -207,9 +285,9 @@
         </tbody>
     </table>
  <div class="box-footer">
-    <a class="btn  btn-primary" href="{{ path('cargos_proyecto_index') }}">Back</a>
+    <a class="btn  btn-primary" href="{{ path('cargos_proyecto_index') }}">Regresar</a>
 
-    <a class="btn  btn-primary" href="{{ path('cargos_proyecto_edit', {'id': cargos_proyecto.id}) }}">Edit</a>
+    <a class="btn  btn-primary" href="{{ path('cargos_proyecto_edit', {'id': cargos_proyecto.id}) }}">Editar</a>
    </div>   
 
     {{ include('cargos_proyecto/_delete_form.html.twig') }}

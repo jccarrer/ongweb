@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+// Include paginator interface
+use Knp\Component\Pager\PaginatorInterface;
+
 /**
  * @Route("admin/indicadores")
  */
@@ -18,10 +21,23 @@ class IndicadoresController extends AbstractController
     /**
      * @Route("/", name="indicadores_index", methods={"GET"})
      */
-    public function index(IndicadoresRepository $indicadoresRepository): Response
+    public function index(IndicadoresRepository $indicadoresRepository, PaginatorInterface $paginator,Request $request): Response
     {
+
+		$allindicadores = $indicadoresRepository->findAll();
+
+        // Paginate the results of the query
+        $indicadores = $paginator->paginate(
+            // Doctrine Query, not results
+            $allindicadores,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            3
+        );
+
         return $this->render('indicadores/index.html.twig', [
-            'indicadores' => $indicadoresRepository->findAll(),
+            'indicadores' => $indicadores,
         ]);
     }
 

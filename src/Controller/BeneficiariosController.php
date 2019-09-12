@@ -10,6 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+// Include paginator interface
+use Knp\Component\Pager\PaginatorInterface;
+
 /**
  * @Route("admin/beneficiarios")
  */
@@ -18,10 +22,25 @@ class BeneficiariosController extends AbstractController
     /**
      * @Route("/", name="beneficiarios_index", methods={"GET"})
      */
-    public function index(BeneficiariosRepository $beneficiariosRepository): Response
+    public function index(BeneficiariosRepository $beneficiariosRepository, PaginatorInterface $paginator,Request $request): Response
     {
+
+     
+		$allbeneficiarios = $beneficiariosRepository->findAll();
+
+        // Paginate the results of the query
+        $beneficiarios = $paginator->paginate(
+            // Doctrine Query, not results
+            $allbeneficiarios,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            9
+        );
+
+
         return $this->render('beneficiarios/index.html.twig', [
-            'beneficiarios' => $beneficiariosRepository->findAll(),
+            'beneficiarios' => $beneficiarios,
         ]);
     }
 

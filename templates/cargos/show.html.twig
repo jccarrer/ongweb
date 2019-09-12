@@ -119,20 +119,7 @@
                   <!-- sidebar menu: : style can be found in sidebar.less -->
                   <ul class="sidebar-menu tree" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview menu-open">
-                      <a href="#">
-                        <i class="fa fa-bank"></i> <span>Organizaciones</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Ver todas</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>
-                      </ul>
-                    </li>
-                
-                    <li class="treeview">
+                     <li class="treeview">
                       <a href="#">
                         <i class="fa fa-users"></i>
                         <span>Usuarios</span>
@@ -142,9 +129,118 @@
                       </a>
                       <ul class="treeview-menu">
                         <li><a href="{{ path('user_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('user_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+                    <li class="treeview">
+                      <a href="{{ path('osc_index')}}">
+                        <i class="fa fa-bank"></i> <span>Organizaciones</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('osc_index')}}"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+<!--                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Crear nueva</a></li>-->
+                        <li><a href="{{ path('osc_new')}}"><i class="fa fa-circle-o"></i> Crear nueva</a></li> 
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>Proyectos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('proyecto_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+					
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cubes"></i>
+                        <span>CargosPorProyecto</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('cargos_proyecto_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('cargos_proyecto_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cube"></i>
+                        <span>Resultados</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('resultados_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
                       </ul>
                     </li>
+
+
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-cube"></i>
+                        <span>Indicadores</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('indicadores_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('indicadores_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-calendar"></i>
+                        <span>Actividades</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('actividades_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('actividades_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
+					<li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-image"></i>
+                        <span>Documentos</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="{{ path('documentos_verificacion_index') }}"><i class="fa fa-circle-o"></i> Listar todos</a></li>
+                        <li><a href="{{ path('documentos_verificacion_new') }}"><i class="fa fa-circle-o"></i> Crear nuevo</a></li>
+                      </ul>
+                    </li>
+
+
                     
                   </ul>
                 </section>
@@ -205,12 +301,12 @@
 
                     
 <div class="box-footer">
-                    <a class="btn  btn-primary" href="{{ path('cargos_edit', {'id': cargo.id}) }}">edit</a>
+                   
 
        
 
-                    <a class="btn  btn-primary" href="{{ path('cargos_index') }}">Back</a>
-                  
+                    <a class="btn  btn-primary" href="{{ path('cargos_index') }}">Regresar</a>
+					<a class="btn  btn-primary" href="{{ path('cargos_edit', {'id': cargo.id}) }}">Editar</a>
 </div>   
 
                     {{ include('cargos/_delete_form.html.twig') }}

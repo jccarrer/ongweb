@@ -26,7 +26,7 @@ class CargosProyecto
 
     
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Cargos", inversedBy="cargosProyectos")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Cargos", inversedBy="cargosProyectos" )
      * @ORM\JoinColumn(name="cargo_id", referencedColumnName="id")
      */
     private $cargo;
