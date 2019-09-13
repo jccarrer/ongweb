@@ -134,7 +134,58 @@ class OscController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+		$file = $request->files->get('osc')['estatutos'];
+			$upload_directory = $this->getParameter('uploads_directory');
+			$filename = md5(uniqid()) .'.'. $file->guessExtension();
+
+			$file->move(
+				$upload_directory,
+				$filename
+			);
+
+
+			$file2 = $request->files->get('osc')['cta_bancaria'];
+			$upload_directory = $this->getParameter('uploads_directory');
+			$filename2 = md5(uniqid()) .'.'. $file2->guessExtension();
+
+			$file2->move(
+				$upload_directory,
+				$filename2
+			);
+
+
+			$file3 = $request->files->get('osc')['ci_representante'];
+			$upload_directory = $this->getParameter('uploads_directory');
+			$filename3 = md5(uniqid()) .'.'. $file3->guessExtension();
+
+			$file3->move(
+				$upload_directory,
+				$filename3
+			);
+
+
+			$file4 = $request->files->get('osc')['ci_uafe'];
+			$upload_directory = $this->getParameter('uploads_directory');
+			$filename4 = md5(uniqid()) .'.'. $file4->guessExtension();
+
+			$file4->move(
+				$upload_directory,
+				$filename4
+			);
+
+
+
+
+			$osc->setEstatutos($filename);
+			$osc->setCtaBancaria($filename2);
+			$osc->setCiRepresentante($filename3);
+			$osc->setCiUafe($filename4);
+
+
+			$entityManager = $this->getDoctrine()->getManager();
+			$entityManager->persist($osc);
+			$entityManager->flush();
+
 
             return $this->redirectToRoute('osc_index', [
                 'id' => $osc->getId(),
